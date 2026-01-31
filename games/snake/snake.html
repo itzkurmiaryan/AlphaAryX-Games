@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AlphaAryX Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="game-body">
+
+  <h1 class="game-title">🐍 AlphaAryX Snake Game</h1>
+  <p class="score">Score: <span id="score">0</span></p>
+
+  <!-- Level Selection -->
+  <div class="levels">
+    <button onclick="selectLevel('beginner')">Beginner</button>
+    <button onclick="selectLevel('intermediate')">Intermediate</button>
+    <button onclick="selectLevel('advanced')">Advanced</button>
+  </div>
+
+  <!-- Game Container -->
+  <div class="game-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <!-- Play Overlay -->
+    <div id="overlay">
+      <h2>First Select Level & then Play</h2>
+      <button onclick="startGame()">▶ PLAY</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOver">
+      <h2>Game Over</h2>
+      <p>Your Score: <span id="finalScore"></span></p>
+      <button onclick="location.reload()">Restart</button>
+    </div>
+  </div>
+
+  <!-- Mobile Controls -->
+  <div class="controls">
+    <button onclick="changeDirection('UP')">⬆</button>
+    <div>
+      <button onclick="changeDirection('LEFT')">⬅</button>
+      <button onclick="changeDirection('RIGHT')">➡</button>
+    </div>
+    <button onclick="changeDirection('DOWN')">⬇</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+/* === Body & General === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: white;
+  text-align: center;
+}
+
+.game-body {
+  padding: 20px;
+}
+
+.game-title {
+  font-size: 32px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+/* === Overlay Screens === */
+#optionOverlay, #levelOverlay, #overlay, #gameOver {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+#optionOverlay, #levelOverlay, #overlay, #gameOver {
+  position: fixed;   /* 🔥 absolute → fixed */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(2,6,23,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;   /* 🔥 always on top */
+}
+
+#optionOverlay button,
+#levelOverlay button,
+#overlay button,
+#gameOver button {
+  background: #22c55e;
+  border: none;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 5px;
+  min-width: 140px;
+  transition: 0.2s;
+}
+
+#optionOverlay button:hover,
+#levelOverlay button:hover,
+#overlay button:hover,
+#gameOver button:hover {
+  background: #16a34a;
+}
+
+/* === Active Button (Level Selected) === */
+#levelOverlay button.active {
+  background: #38bdf8;
+  color: black;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* === Game Container & Board === */
+.game-container {
+  position: relative;
+  width: 400px;
+  margin: 15px auto;
+}
+
+#board {
+  border-collapse: collapse;
+  margin: 20px auto;
+  display: none;
+}
+
+#board td {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #38bdf8;
+  font-size: 48px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #22c55e;
+}
+
+#board td:hover {
+  background: rgba(56,189,248,0.2);
+}
+
+/* === Game Over === */
+#gameOver {
+  display: none;
+}
+
+#overText {
+  color: #ef4444;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* === Level / Option Overlays === */
+#levelOverlay button, #optionOverlay button {
+  font-weight: bold;
+}
+
+/* === Mobile Controls (if any) === */
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  background: #1e293b;
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 12px 18px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* === Score Display === */
+.score {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #facc15;
+}
+
+/* === Responsive === */
+@media (max-width: 480px){
+  #board td{
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+  }
+  .game-container {
+    width: 90vw;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: white;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 32px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.score {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #facc15;
+}
+
+/* Overlay Screens */
+#optionOverlay, #levelOverlay, #gameOver {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#optionOverlay button, #levelOverlay button, #gameOver button {
+  background: #22c55e;
+  border: none;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 5px;
+  min-width: 140px;
+  transition: 0.2s;
+}
+
+#optionOverlay button:hover, #levelOverlay button:hover, #gameOver button:hover {
+  background: #16a34a;
+}
+
+#levelOverlay button.active {
+  background: #38bdf8;
+  color: black;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* Game Container & Board */
+.game-container {
+  position: relative;
+  width: 400px;
+  margin: 15px auto;
+}
+
+#board {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+#board td {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #38bdf8;
+  font-size: 48px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #22c55e;
+}
+
+#board td:hover {
+  background: rgba(56,189,248,0.2);
+}
+
+#gameOver {
+  display: none;
+}
+
+#overText {
+  color: #ef4444;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 480px){
+  #board td{
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+  }
+  .game-container {
+    width: 90vw;
+  }
+}

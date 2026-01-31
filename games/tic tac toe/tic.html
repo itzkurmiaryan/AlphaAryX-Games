@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlphaAryX Tic Tac Toe PRO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="game-body">
+
+<h1 class="game-title">❌⭕ AlphaAryX Tic Tac Toe PRO</h1>
+
+<!-- Scoreboard -->
+<div class="score" id="scoreboard" style="display:none;">
+  Player: <span id="playerScore">0</span> | 
+  Opponent: <span id="compScore">0</span>
+</div>
+
+<!-- Option Selection -->
+<div id="optionOverlay">
+  <h2>Select Mode</h2>
+  <button onclick="selectMode('computer')">Play with Computer</button>
+  <button onclick="selectMode('friend')">Play with Friend</button>
+</div>
+
+<!-- Level Selection (Computer) -->
+<div id="levelOverlay" style="display:none;">
+  <h2>Select Difficulty</h2>
+  <button onclick="selectLevel('beginner', this)">Beginner</button>
+  <button onclick="selectLevel('intermediate', this)">Intermediate</button>
+  <button onclick="selectLevel('advanced', this)">Advanced</button>
+  <button onclick="startGame()">▶ PLAY</button>
+   <button onclick="goBack()">⬅ BACK</button>
+</div>
+
+<!-- Game Board -->
+<div class="game-container">
+  <table id="board" style="display:none; margin:auto; margin-top:20px;">
+    <tr>
+      <td onclick="makeMove(0,0)"></td>
+      <td onclick="makeMove(0,1)"></td>
+      <td onclick="makeMove(0,2)"></td>
+    </tr>
+    <tr>
+      <td onclick="makeMove(1,0)"></td>
+      <td onclick="makeMove(1,1)"></td>
+      <td onclick="makeMove(1,2)"></td>
+    </tr>
+    <tr>
+      <td onclick="makeMove(2,0)"></td>
+      <td onclick="makeMove(2,1)"></td>
+      <td onclick="makeMove(2,2)"></td>
+    </tr>
+  </table>
+
+  <!-- Game Over Overlay -->
+  <div id="gameOver">
+    <h2 id="overText"></h2>
+    <button onclick="nextMatch()">Next Match</button>
+    <button onclick="restartAll()">Restart All</button>
+      <button onclick="goBack()">⬅ BACK</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlphaAryX Zombie Shooter PRO</title>
+<link rel="stylesheet" href="zombie.css">
+</head>
+<body>
+
+<h1 class="game-title">🧟 AlphaAryX Zombie Shooter PRO</h1>
+
+<div class="scoreboard">
+  Score: <span id="score">0</span> | Lives: <span id="lives">3</span>
+</div>
+
+<div class="instructions">
+  Use ← → arrows to move, SPACE to shoot 🟨
+</div>
+
+<div class="game-container">
+  <canvas id="gameCanvas" width="400" height="600"></canvas>
+</div>
+
+<!-- Start Overlay -->
+<div id="startOverlay" class="overlay">
+  <h2>🎯 Start Zombie Shooter</h2>
+  <button onclick="startGameFromOverlay()">Start Game</button>
+</div>
+
+<!-- Game Over Overlay -->
+<div id="gameOver" class="overlay" style="display:none;">
+  <h2>💀 Game Over</h2>
+  <p>Your Score: <span id="finalScore">0</span></p>
+  <button onclick="startGame()">Restart</button>
+  <button onclick="backToMenu()">Back</button>
+</div>
+
+<script src="zombie.js"></script>
+</body>
+</html>

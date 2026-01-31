@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AlphaAryX Car Racing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-body">
+
+<h1 class="game-title">🚗 AlphaAryX Car Racing</h1>
+<p class="score">Score: <span id="score">0</span></p>
+
+<!-- Level Selection -->
+<div class="levels">
+  <button onclick="selectLevel('beginner', this)">Beginner</button>
+  <button onclick="selectLevel('intermediate', this)">Intermediate</button>
+  <button onclick="selectLevel('advanced', this)">Advanced</button>
+</div>
+
+<div class="game-container">
+  <canvas id="gameCanvas" width="400" height="500"></canvas>
+
+  <!-- Play Overlay -->
+  <div id="overlay">
+    <h2>Select Level & Play</h2>
+    <button onclick="startGame()">▶ PLAY</button>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id="gameOver">
+    <h2>Game Over</h2>
+    <p>Your Score: <span id="finalScore"></span></p>
+    <button onclick="location.reload()">Restart</button>
+  </div>
+</div>
+
+<!-- Mobile Controls -->
+<div class="controls">
+  <button onclick="moveLeft()">⬅</button>
+  <button onclick="moveRight()">➡</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

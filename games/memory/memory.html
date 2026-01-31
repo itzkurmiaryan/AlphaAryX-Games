@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlphaAryX Memory Game PRO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="game-title">🧠 AlphaAryX Memory Game PRO</h1>
+
+<!-- Scoreboard -->
+<div class="scoreboard">
+  Moves: <span id="moves">0</span> | Matches: <span id="matches">0</span> | Time: <span id="timer">0</span>s
+</div>
+
+<!-- Level Selection -->
+<div id="levelOverlay" class="overlay">
+  <h2>Select Level</h2>
+  <button onclick="startGame('beginner')">Beginner (4x4)</button>
+  <button onclick="startGame('intermediate')">Intermediate (6x6)</button>
+  <button onclick="startGame('advanced')">Advanced (8x8)</button>
+</div>
+
+<!-- Game Board -->
+<div class="game-container">
+  <div id="board" class="board"></div>
+</div>
+
+<!-- Game Over Overlay -->
+<div id="gameOver" class="overlay" style="display:none;">
+  <h2>🎉 You Won!</h2>
+  <p>Total Moves: <span id="totalMoves">0</span></p>
+  <p>Time: <span id="totalTime">0</span>s</p>
+  <p>Score: <span id="finalScore">0</span></p>
+  <p>High Score: <span id="highScore">0</span></p>
+  <button onclick="restartGame()">Restart</button>
+  <button onclick="backToMenu()">Back</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
